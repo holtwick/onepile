@@ -1,7 +1,13 @@
-<img src="icon_128x128@2x.png" width="128">
+# Collect App
 
-# Collect
+- [Homepage](https://collect-app.com)
+- [Documentation](https://collect-app.com/help)
+- [Support](https://collect-app.com/support)
+- [Issues](https://github.com/holtwick/collect/issues)
 
-Visit [collect-app.com](https://collect-app.com)
+## Features
 
-More to come...
+- Collect all documents in one place
+- Privacy first! Local, encrypted, transparent.
+- Semantic approach
+- Open for third party plugins
