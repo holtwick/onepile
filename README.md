@@ -1,5 +1,3 @@
-<a href="https://www.patreon.com/bePatron?u=18053003" data-patreon-widget-type="become-patron-button" title="Support the project via Patreon"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" style="border-radius: 999px; height: 36px;" height="36"></a>
-
 # Collect App
 
 - [Homepage](https://collect-app.com)
