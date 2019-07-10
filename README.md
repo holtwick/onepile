@@ -1,11 +1,11 @@
-# Collect App
+# OnePile App
 
-- [Homepage](https://collect-app.com)
-- [Documentation](https://collect-app.com/help)
-- [Support](https://collect-app.com/support)
-- [Issues](https://github.com/holtwick/collect/issues)
+- [Homepage](https://onepile.app)
+- [Documentation](https://onepile.app/help)
+- [Support](https://onepile.app/support)
+- [Issues](https://github.com/holtwick/onepile/issues)
 
-## Features
+## The Idea
 
 - Collect all documents in one place
 - Privacy first! Local, encrypted, transparent.
