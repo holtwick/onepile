@@ -13,3 +13,9 @@ This repository contains useful resources for working with OnePile. You can part
 
 Over time we will try to make OnePile more accessible from the outside. The file format is already [described here](https://onepile.app/en/help/internal-file-format). More resources can be found in this repository.
 
+### License
+
+Any material provided in this repository is covered by the [MIT License](LICENSE.txt)
+
+OnePile itself is closed source, you can learn about the [details here](https://onepile.app/en/blog/commercial-plans). If you are interested in using core technology of the product please [get in contact](https://onepile.app/support).
+
