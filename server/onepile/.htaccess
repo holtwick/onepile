@@ -22,7 +22,9 @@ Header always set Access-Control-Allow-Credentials "true"
 ## Some SabreDAV propsed optimizations
 
 # This makes every request go to server.php
-# RewriteRule ^/onepile/(.*)$ /onepile/server.php [L]
+RewriteRule ^dav/(.*)$ /onepile/server.php/$1 [PT,L]
+#RewriteRule ^/onepile/(.*)$ /onepile/server.php [PT,L]
+#RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
 
 # Output buffering needs to be off, to prevent high memory usage
 php_flag output_buffering off
