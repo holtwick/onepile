@@ -1,0 +1,56 @@
+# Don't forget to change the server name
+# ServerName onepile.webdav
+
+# The DocumentRoot is also required
+# DocumentRoot /home/sabredav/
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ blank.html [R=200,L,E=HTTP_ORIGIN:%{HTTP:ORIGIN}]
+
+# Authentification
+
+    AuthType Basic
+    AuthUserFile /Users/dirk/work/onepile-github/server/onepile/.htpasswd
+    AuthName "Authentification"
+
+<LimitExcept OPTIONS>
+    Require valid-user
+</LimitExcept>
+
+# Enable CORS
+
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "*"
+Header always set Access-Control-Allow-Headers "*"
+Header always set Access-Control-Allow-Credentials "true"
+
+#Header always set Access-Control-Allow-Origin "*"
+#Header always set Access-Control-Allow-Headers "origin, content-type, cache-control, accept, authorization, if-match, destination, overwrite"
+#Header always set Access-Control-Expose-Headers "ETag"
+#Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"
+#Header always set Access-Control-Allow-Credentials "true"
+
+#Header set Access-Control-Allow-Origin "http://localhost:8080"
+#Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE,OPTIONS"
+#Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+## Some SabreDAV propsed optimizations
+#
+## This makes every request go to server.php
+##RewriteRule ^/onepile/(.*)$ /onepile/server.php [L]
+#
+## Output buffering needs to be off, to prevent high memory usage
+#php_flag output_buffering off
+#
+## This is also to prevent high memory usage
+#php_flag always_populate_raw_post_data off
+#
+## This is almost a given, but magic quotes is *still* on on some
+## linux distributions
+#php_flag magic_quotes_gpc off
+#
+## SabreDAV is not compatible with mbstring function overloading
+#php_flag mbstring.func_overload off
+#
