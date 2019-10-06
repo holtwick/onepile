@@ -19,12 +19,12 @@ Header always set Access-Control-Allow-Methods "*"
 Header always set Access-Control-Allow-Headers "*"
 Header always set Access-Control-Allow-Credentials "true"
 
-## Some SabreDAV propsed optimizations
+# This makes every request under /onepile/ go to server.php
 
-# This makes every request go to server.php
-RewriteRule ^dav/(.*)$ /onepile/server.php/$1 [PT,L]
-#RewriteRule ^/onepile/(.*)$ /onepile/server.php [PT,L]
-#RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+RewriteRule ^server.php(.*)$ - [L] # Avoid looping see https://stackoverflow.com/a/22846491/140927
+RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},PT,L]
+
+## Some SabreDAV propsed optimizations
 
 # Output buffering needs to be off, to prevent high memory usage
 php_flag output_buffering off
