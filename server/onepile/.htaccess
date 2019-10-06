@@ -1,0 +1,41 @@
+RewriteEngine On
+
+# Authentication
+
+AuthType Basic
+AuthUserFile /Users/dirk/work/onepile-github/server/onepile/.htpasswd
+AuthName "Authentication"
+
+# Add authentication for everyting but OPTIONS calls in order to support CORS
+
+<LimitExcept OPTIONS>
+    Require valid-user
+</LimitExcept>
+
+# Enable CORS
+
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "*"
+Header always set Access-Control-Allow-Headers "*"
+Header always set Access-Control-Allow-Credentials "true"
+
+# This makes every request under /onepile/ go to server.php
+
+RewriteRule ^server.php(.*)$ - [L] # Avoid looping see https://stackoverflow.com/a/22846491/140927
+RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},PT,L]
+
+## Some SabreDAV propsed optimizations
+
+# Output buffering needs to be off, to prevent high memory usage
+php_flag output_buffering off
+
+# This is also to prevent high memory usage
+php_flag always_populate_raw_post_data off
+
+# This is almost a given, but magic quotes is *still* on on some
+# linux distributions
+php_flag magic_quotes_gpc off
+
+# SabreDAV is not compatible with mbstring function overloading
+php_flag mbstring.func_overload off
+
