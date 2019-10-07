@@ -8,6 +8,12 @@ This is an example how to enable WebDAV on your simple web hosting that supports
 
 This sample works with Apache. Just copy the `onepile` folder to a web hosting instance. Make sure to adjust paths if required.
 
+Make sure the `public` and `data` folders have enough access rights:
+
+```sh 
+chmod a+rwx data public
+```
+
 ## Configuration .htaccess
 
 The [`.htaccess`](./onepile/.htaccess) provides some *per-folder-config* for Apache. Please use with care!
