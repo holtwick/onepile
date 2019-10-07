@@ -4,9 +4,17 @@ A very widely used and open protocol for file storage is WebDAV. It is also a si
 
 This is an example how to enable WebDAV on your simple web hosting that supports PHP. It is a sample installation of [Sabre/DAV](http://sabre.io/dav/install/).
 
+The installation can then be accessed like: `http://<your_domain>/onepile/server.php`.
+
 ## Installation on Apache
 
 This sample works with Apache. Just copy the `onepile` folder to a web hosting instance. Make sure to adjust paths if required.
+
+Make sure the `public` and `data` folders have enough access rights:
+
+```sh 
+chmod a+rwx data public
+```
 
 ## Configuration .htaccess
 

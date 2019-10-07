@@ -19,10 +19,10 @@ Header always set Access-Control-Allow-Methods "*"
 Header always set Access-Control-Allow-Headers "*"
 Header always set Access-Control-Allow-Credentials "true"
 
-# This makes every request under /onepile/ go to server.php
+# This makes every request under /onepile/ go to server.php. Use with care, can cause problems on some installations.
 
-RewriteRule ^server.php(.*)$ - [L] # Avoid looping see https://stackoverflow.com/a/22846491/140927
-RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},PT,L]
+# RewriteRule ^server.php(.*)$ - [L] # Avoid looping see https://stackoverflow.com/a/22846491/140927
+# RewriteRule ^(.*)$ /onepile/server.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},PT,L]
 
 ## Some SabreDAV propsed optimizations
 
