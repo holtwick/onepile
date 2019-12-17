@@ -13,6 +13,14 @@ This repository contains useful resources for working with OnePile. You can part
 
 Over time we will try to make OnePile more accessible from the outside. The file format is already [described here](https://onepile.app/en/help/internal-file-format). More resources can be found in this repository.
 
+### CLI
+
+A command-line tool for OnePile is currently in development. You can test by installing via Homebrew on macOS:
+
+```bash
+brew install holtwick/formulae/onepile
+```
+
 ### License
 
 Any material provided in this repository is covered by the [MIT License](LICENSE.txt)
