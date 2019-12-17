@@ -1,3 +1,6 @@
+# This is pretty much the result of https://nshipster.com/homebrew/
+# Install like this: brew install holtwick/formulae/onepile
+
 SHELL = /bin/bash
 
 prefix ?= /usr/local
