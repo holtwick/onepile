@@ -27,3 +27,6 @@ Any material provided in this repository is covered by the [MIT License](LICENSE
 
 OnePile itself is closed source, you can learn about the [details here](https://onepile.app/en/blog/commercial-plans). If you are interested in using core technology of the product please [get in contact](https://onepile.app/support).
 
+---
+
+Fund this project by [sponsoring via GitHub](https://github.com/sponsors/holtwick). 

@@ -48,3 +48,32 @@ It is very important that `OPTIONS` calls are not affected by the authentication
     Require valid-user
 </LimitExcept>
 ```
+
+---
+
+# Apche mod_dav
+
+If the Apache DAV module is available it is of course preferable to use that. To enable CORS you might want to follow this example:
+
+``` 
+Alias /dav /var/www/vhosts/webdav.example.de/webdav
+
+<Directory /var/www/vhosts/webdav.example.de/webdav>
+    Require all granted
+    DAV on
+    
+    AuthUserFile /var/www/vhosts/webdav.example.de/webdav.passwd
+    AuthName WebDAV-Auth
+    AuthType Basic
+    
+    <LimitExcept OPTIONS>
+        Require valid-user
+    </LimitExcept>
+    
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "*"
+    Header always set Access-Control-Allow-Headers "*"
+    Header always set Access-Control-Expose-Headers "ETag"
+    Header always set Access-Control-Allow-Credentials "true"
+</Directory>
+``` 
